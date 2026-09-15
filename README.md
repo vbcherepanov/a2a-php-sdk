@@ -22,7 +22,7 @@ provides service registration, routes, console workers, Doctrine storage and Mes
 | Native gRPC server | Also OpenSwoole 26.2+ built with HTTP/2 and OpenSSL |
 | Development tests | Docker Engine and Docker Compose v2 |
 
-Once the package is registered on Packagist, install it inside your application's PHP container:
+Install it inside your application's PHP container:
 
 ~~~sh
 docker compose run --rm php composer require vbcherepanov/a2a-php-sdk
@@ -32,10 +32,6 @@ For the optional native gRPC client, also install `grpc/grpc` with Composer and
 enable `ext-grpc` in the PHP image. HTTP installations do not need either gRPC
 extension or OpenSwoole. The included Dockerfile is a development/test runtime,
 not a production application image.
-
-Before Packagist registration, add this GitHub repository as a Composer VCS
-repository and use `dev-main`. A tag provides the package version; do not add a
-hardcoded `version` field to `composer.json`.
 
 ## Client
 

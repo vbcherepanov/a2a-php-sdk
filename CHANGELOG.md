@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.0.0 — 2026-09-15
 
 Initial client and server implementation of A2A protocol 1.0.0.
 

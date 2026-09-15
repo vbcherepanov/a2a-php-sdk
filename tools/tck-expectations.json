@@ -1,0 +1,110 @@
+{
+  "revision": "263b9cfaf16a554bdfb166a7ba5b67716e946349",
+  "tests": 265,
+  "failed": [
+    {
+      "classname": "tests.compatibility.core_operations.test_requirements",
+      "name": "test_must_requirement[CORE-SEND-003-grpc]"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_requirements",
+      "name": "test_must_requirement[CORE-SEND-003-jsonrpc]"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_requirements",
+      "name": "test_must_requirement[CORE-SEND-003-http_json]"
+    }
+  ],
+  "skipped": [
+    {
+      "classname": "tests.compatibility.core_operations.test_error_handling.TestCapabilityPushNotifications",
+      "name": "test_push_not_supported_jsonrpc",
+      "reason": "Agent supports push notifications"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_error_handling.TestCapabilityPushNotifications",
+      "name": "test_push_not_supported_rest",
+      "reason": "Agent supports push notifications"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_error_handling.TestCapabilityStreaming",
+      "name": "test_streaming_not_supported_jsonrpc",
+      "reason": "Agent supports streaming"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_error_handling.TestCapabilityExtensionRequired",
+      "name": "test_missing_required_extension_returns_error_jsonrpc",
+      "reason": "Agent card does not declare urn:a2a:tck:required-extension as required"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_error_handling.TestCapabilityExtensionRequired",
+      "name": "test_missing_required_extension_returns_error_http_json",
+      "reason": "Agent card does not declare urn:a2a:tck:required-extension as required"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_error_handling.TestCapabilityExtendedCard",
+      "name": "test_extended_card_not_supported_jsonrpc",
+      "reason": "Agent supports extended agent card"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_error_handling.TestExtendedCardNotConfigured",
+      "name": "test_extended_card_not_configured_jsonrpc",
+      "reason": "Extended card is configured (test precondition does not hold)"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_error_handling.TestExtendedCardNotConfigured",
+      "name": "test_extended_card_not_configured_http_json",
+      "reason": "Extended card is configured (test precondition does not hold)"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_error_handling.TestExtendedCardNotConfigured",
+      "name": "test_extended_card_not_configured_grpc",
+      "reason": "Extended card is configured (test precondition does not hold)"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_requirements",
+      "name": "test_should_requirement[no-requirements-grpc]",
+      "reason": "No requirements at this level"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_requirements",
+      "name": "test_should_requirement[no-requirements-jsonrpc]",
+      "reason": "No requirements at this level"
+    },
+    {
+      "classname": "tests.compatibility.core_operations.test_requirements",
+      "name": "test_should_requirement[no-requirements-http_json]",
+      "reason": "No requirements at this level"
+    },
+    {
+      "classname": "tests.compatibility.grpc.test_status_codes.TestGrpcStatusCodes",
+      "name": "test_unsupported_operation_returns_unimplemented",
+      "reason": "Agent supports streaming; cannot trigger UnsupportedOperationError"
+    },
+    {
+      "classname": "tests.compatibility.grpc.test_status_codes.TestGrpcStatusCodes",
+      "name": "test_push_not_supported_returns_unimplemented",
+      "reason": "Agent supports push notifications; cannot trigger error"
+    },
+    {
+      "classname": "tests.compatibility.http_json.test_http_status.TestHttpJsonStatusCodes",
+      "name": "test_unsupported_operation_returns_400",
+      "reason": "Agent supports streaming; cannot trigger UnsupportedOperationError"
+    },
+    {
+      "classname": "tests.compatibility.http_json.test_http_status.TestHttpJsonStatusCodes",
+      "name": "test_push_not_supported_returns_400",
+      "reason": "Agent supports push notifications; cannot trigger error"
+    },
+    {
+      "classname": "tests.compatibility.jsonrpc.test_error_codes.TestJsonRpcErrorCodeMappings",
+      "name": "test_push_notification_not_supported_error",
+      "reason": "Agent supports push notifications; cannot trigger -32003"
+    },
+    {
+      "classname": "tests.compatibility.jsonrpc.test_error_codes.TestJsonRpcErrorCodeMappings",
+      "name": "test_unsupported_operation_error",
+      "reason": "Agent supports streaming; cannot trigger -32004"
+    }
+  ]
+}

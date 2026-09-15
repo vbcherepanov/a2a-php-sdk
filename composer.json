@@ -1,0 +1,48 @@
+{
+  "name": "vbcherepanov/a2a-php-sdk",
+  "description": "A2A 1.0 client and server SDK with JSON-RPC, REST, SSE and optional gRPC transports",
+  "type": "library",
+  "license": "Apache-2.0",
+  "keywords": ["a2a", "agent", "agent-to-agent", "json-rpc", "grpc", "sse"],
+  "homepage": "https://github.com/vbcherepanov/a2a-php-sdk",
+  "support": {
+    "issues": "https://github.com/vbcherepanov/a2a-php-sdk/issues",
+    "source": "https://github.com/vbcherepanov/a2a-php-sdk"
+  },
+  "archive": {
+    "exclude": ["/.github", "/.gitattributes", "/.gitignore", "/.dockerignore", "/.env*", "/.php*", "/Dockerfile", "/Makefile", "/compose.yml", "/composer.lock", "/phpstan.neon", "/phpunit.xml", "/tests", "/tools", "/docs", "/dist", "/vendor", "/var"]
+  },
+  "require": {
+    "php": "^8.4",
+    "ext-bcmath": "*",
+    "google/protobuf": "^4.33",
+    "google/common-protos": "^4.12",
+    "psr/log": "^3.0",
+    "symfony/http-client": "^7.4 || ^8.0",
+    "symfony/http-foundation": "^7.4 || ^8.0",
+    "symfony/uid": "^7.4 || ^8.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.90",
+    "grpc/grpc": "^1.74",
+    "openswoole/ide-helper": "^26.2",
+    "phpstan/phpstan": "^2.1",
+    "phpunit/phpunit": "^11.5",
+    "symfony/process": "^7.4 || ^8.0"
+  },
+  "suggest": {
+    "ext-grpc": "Required by the optional native gRPC client transport",
+    "grpc/grpc": "Required by the optional native gRPC client transport",
+    "ext-openswoole": "Required only by the optional gRPC server runtime"
+  },
+  "autoload": {"psr-4": {"A2A\\Storage\\Proto\\": "generated/A2A/Storage/Proto/", "A2A\\Storage\\Metadata\\": "generated/A2A/Storage/Metadata/", "A2A\\": "src/", "Lf\\A2a\\V1\\": "generated/Lf/A2a/V1/", "GPBMetadata\\": "generated/GPBMetadata/"}},
+  "autoload-dev": {"psr-4": {"A2A\\Tests\\": "tests/"}},
+  "scripts": {
+    "test": "phpunit",
+    "lint": "phpstan analyse --no-progress --memory-limit=1G",
+    "style": "php-cs-fixer fix --dry-run --diff",
+    "build": "@php tools/check-generated.php",
+    "package": "@php tools/check-package.php"
+  },
+  "config": {"sort-packages": true, "allow-plugins": false}
+}

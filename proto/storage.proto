@@ -1,0 +1,27 @@
+syntax = "proto3";
+package a2a.storage;
+option php_namespace = "A2A\\Storage\\Proto";
+option php_metadata_namespace = "A2A\\Storage\\Metadata";
+import "a2a.proto";
+message Record {
+  lf.a2a.v1.Task task = 1;
+  string principal = 2;
+  string tenant = 3;
+  repeated lf.a2a.v1.TaskPushNotificationConfig configs = 4;
+  repeated lf.a2a.v1.StreamResponse events = 5;
+  lf.a2a.v1.SendMessageRequest pending = 6;
+  double lease_until = 7;
+  string lease_token = 8;
+  int64 revision = 9;
+  repeated Delivery outbox = 10;
+  int64 event_sequence = 11;
+  repeated string extensions = 12;
+}
+message Delivery {
+  string id = 1;
+  lf.a2a.v1.Task task = 2;
+  lf.a2a.v1.TaskPushNotificationConfig config = 3;
+  int32 attempts = 4;
+  double next_attempt = 5;
+  lf.a2a.v1.StreamResponse event = 6;
+}

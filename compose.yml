@@ -1,0 +1,23 @@
+services:
+  php:
+    image: ${SDK_IMAGE:-a2a-php-sdk-dev:local}
+    build:
+      context: .
+      args:
+        PHP_IMAGE: ${PHP_IMAGE:-php:8.4-cli-alpine}
+        OPENSWOOLE_VERSION: ${OPENSWOOLE_VERSION:-26.2.0}
+        GRPC_VERSION: ${GRPC_VERSION:-1.78.0}
+    working_dir: ${SDK_WORKDIR:-/app}
+    user: ${SDK_UID:-1000}:${SDK_GID:-1000}
+    environment:
+      COMPOSER_ROOT_VERSION: ${COMPOSER_ROOT_VERSION:-dev-main}
+    volumes:
+      - ${SDK_SOURCE:-.}:/app
+    init: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    healthcheck:
+      test: [CMD, php, -r, "exit(extension_loaded('openswoole') && extension_loaded('grpc') ? 0 : 1);"]
+      interval: ${HEALTH_INTERVAL:-30s}
+      timeout: ${HEALTH_TIMEOUT:-5s}
+      retries: ${HEALTH_RETRIES:-3}

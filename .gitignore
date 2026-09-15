@@ -1,0 +1,16 @@
+/vendor/
+/.env
+/.phpunit.cache/
+/.phpstan-cache/
+/var/
+/.php-cs-fixer.cache
+/dist/
+/.DS_Store
+/docs/SESSION_*.md
+/docs/TASKS.md
+/docs/PROGRESS.md
+/docs/TCK_PR_203_COMMENT.md
+/docs/tck/
+/docs/tck-diagnostic/
+/docs/tck-revisions/
+/docs/tck-pr-203/

@@ -265,5 +265,6 @@ Report reproducible bugs through [GitHub Issues](https://github.com/vbcherepanov
 Include the PHP version, binding, package version and a minimal request/response;
 remove tokens, credentials and private payloads. Licensed under Apache-2.0; see [LICENSE](LICENSE).
 
-No release has been published. Package release numbering is separate from the A2A
-protocol version; development Composer fallback output is not a published release.
+Published versions and release notes are listed on the
+[releases page](https://github.com/vbcherepanov/a2a-php-sdk/releases).
+Package release numbering is separate from the A2A protocol version.

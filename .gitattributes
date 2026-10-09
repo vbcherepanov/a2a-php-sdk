@@ -14,3 +14,4 @@
 /tests export-ignore
 /tools export-ignore
 /docs export-ignore
+/.well-known export-ignore
